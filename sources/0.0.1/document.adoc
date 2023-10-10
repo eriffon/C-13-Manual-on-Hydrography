@@ -1,0 +1,40 @@
+= Manual on Hydrography
+:series: C
+:docnumber: 13
+:doctype: standard
+:edition: 0.0.1
+:language: en
+:published-date: 2023-10
+:copyright-year: 2023
+:status: in-force
+:committee: hssc
+:workgroup: tsmad
+:toclevels: 3
+:mn-document-class: iho
+:mn-output-extensions: xml,html,doc,pdf,rxl
+:local-cache-only:
+:imagesdir: images
+
+
+include::sections/00-document-history.adoc[]
+
+include::sections/01-overview.adoc[]
+
+include::sections/02-principles.adoc[]
+
+include::sections/03-positioning.adoc[]
+
+include::sections/04-depth_determination.adoc[]
+
+include::sections/05-feature_detection.adoc[]
+
+include::sections/06-seafloor_characterisation.adoc[]
+
+include::sections/07-water_levels_and_flows.adoc[]
+
+include::sections/08-topographic_surveying.adoc[]
+
+include::sections/09-hydrographic_practice.adoc[]
+
+include::sections/10-appendices.adoc[]
+

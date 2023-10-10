@@ -1,0 +1,7 @@
+
+[[sec-data-product-identification]]
+== Positioning
+
+*Title*:: Position Determination
+
+Let's find where we are on Earth?

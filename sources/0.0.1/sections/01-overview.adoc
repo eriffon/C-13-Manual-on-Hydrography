@@ -1,0 +1,191 @@
+
+[[sec-overview]]
+== Overview
+Great job HSWG!.
+
+=== Introduction
+
+[bibliography]
+=== References
+* [[[iho-s44,IHO S-44]]]
+
+* [[[iho-s32,IHO S-32]]]
+
+=== Terms, definitions and abbreviations
+
+==== Use of language
+
+Within this document:
+
+* "`Must`" indicates a mandatory requirement.
+* "`Should`" indicates an optional requirement, that is the recommended process to be followed, but is not mandatory.
+* "`May`" means "`allowed to`" or "`could possibly`" and is not mandatory.
+
+
+==== Terms and definitions
+
+===== Accuracy
+
+Closeness of agreement between a test result and the accepted reference values.
+
+NOTE: A test result can be from an observation or measurement.
+
+===== Coordinate
+
+One of a sequence of _n_ numbers designating the position of a point in N-dimensional space.
+
+NOTE: The numbers must be qualified by units and CRS.
+
+===== Coordinate Reference System
+
+*Coordinate* system which is related to the real world by a datum.
+
+===== Coverage
+
+*Feature* that acts as a function to return values from its range for any direct position within its spatial, temporal, or *spatiotemporal domain*.
+
+NOTE: In other words, a coverage is a feature that has multiple values for each attribute type, where each direct position within the geometric representation of the feature has a single value for each attribute type.
+
+[example]
+Examples include a digital image, polygon overlay, or digital elevation matrix
+
+===== Coverage Geometry
+
+Configuration of the *domain* of a *coverage* described in terms of *coordinates*.
+
+===== Direct Position
+
+Position described by a single set of *coordinates* within a *coordinate reference system*.
+
+===== Domain
+
+Well-defined set.
+
+NOTE: Domains are used to define the domain set and range set of attributes, operators, and functions.
+
+===== Depth
+
+The vertical distance from a given water level to the bottom. In this standard, depth refers to the S-32 definition of "Depth Charted".
+
+NOTE: The numbers must be qualified by units and datum. 
+
+===== Feature
+
+Abstraction of real-world phenomena.
+
+NOTE: A feature may occur as a type or an instance. Feature type or feature instance should be used when only one is meant.
+
+===== Feature Attribute
+
+Characteristic of a *feature*.
+
+NOTE: A feature attribute type has a name, a data type, and a domain associated to it. A feature attribute instance has an attribute value taken from the value domain of the feature attribute type.
+
+===== Function
+
+Rule that associates each element from a *domain* (source, or domain of the function) to a unique element in another domain (target, co-domain, or *range*).
+
+NOTE: The range is defined by another domain.
+
+===== Geometric Object
+
+Spatial object representing a set of *direct positions*.
+
+NOTE: A geometric object consists of a geometric primitive, a collection of geometric primitives, or a geometric complex treated as a single entity. A geometric object may be the spatial characteristics of an object such as a feature or a significant part of a feature.
+
+===== Grid
+
+Network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in a systematic way.
+
+NOTE: The curves partition a space into grid cells.
+
+===== Grid Point
+
+Point located at the intersection of two or more curves in a *grid*.
+
+===== Lidar
+
+An optical remote sensing technique that uses a laser pulse to determine distance.
+
+NOTE: Lidar may be used to determine depth in shallow water areas.
+
+===== Navigation Surface
+
+A *coverage* representing the bathymetry and associated uncertainty with the methods by which those objects can be manipulated, combined, and used for a number of tasks, certified for safety of navigation.
+
+===== Range <coverage>
+
+Set of values associated by a *function* with the elements of the *spatiotemporal domain* of a *coverage*.
+
+===== Record
+
+Finite, named collection of related items (objects or values).
+
+NOTE: Logically, a record is a set of pairs <name, item >.
+
+===== Rectified Grid
+
+*Grid* for which there is a linear relationship between the *grid coordinates* and the *coordinates* of an external *coordinate reference system*.
+
+NOTE: If the coordinate reference system is related to the earth by a datum, the grid is a georectified grid.
+
+===== Referenceable Grid
+
+*Grid* associated with a transformation that can be used to convert *grid coordinate* values to values of coordinates referenced to an *external coordinate reference system*.
+
+===== Sonar
+
+A technique that uses sound propagation through water to determine distance, primarily *depth* measurement.
+
+===== Spatiotemporal Domain <coverage>
+
+*Domain* composed of *geometric objects* described in terms of spatial and/or temporal *coordinates*.
+
+NOTE: The spatiotemporal domain of a continuous coverage consists of a set of direct positions defined in relation to a collection of geometric objects.
+
+===== Surface
+
+Connected 2-dimensional geometric primitive, representing the continuous image of a region of a plane.
+
+NOTE: The boundary of a surface is the set of oriented, closed curves that delineate the limits of the surface.
+
+===== Uncertainty
+
+The interval (about a given value) that will contain the true value of the measurement at a specific confidence level.
+
+NOTE: Errors exist and are the differences between the measured value and the true value. Since the true value is never known it follows that the error itself cannot be known. Uncertainty is a statistical assessment of the likely magnitude of this error. The numbers must be qualified by units.
+
+[[itd]]In this document and S-102 uncertainty is always considered to be 1-dimensional and at the 2-sigma or 95% confidence level.[[conlev]]
+
+[reviewer=Lawrence Haynes Haselmaier,from=itd,to=conlev]
+****
+After Andy/Anthony/Lawrence meeting: UKHO -- added this in as discussed. Looking in S-44 section 2.7 as a guide to how confidence level and SD interact it is more complicated when we get to the horizontal uncertainty as technically this is a 2D quantity and should be 2.45 sigma. So I stated here that we consider uncertainty to be 1 dimensional. We may need to revisit this when the Raster Attribute Table is implemented and we add horizontal uncertainty.
+****
+
+===== Vector
+
+Quantity having direction as well as magnitude.
+
+NOTE: A directed line segment represents a vector if the length and direction of the line segment are equal to the magnitude and direction of the vector. The term vector data refers to data that represents the spatial configuration of features as a set of directed line segments.
+
+
+==== Abbreviations
+This Product Specification adopts the following convention for presentation purposes:
+
+API:: Application Programming Interface
+//BAG removed here as it is not mentioned anywhere else in the document. LHH from SMA comments 4Apr2023
+DS:: Digital Signature
+DSS:: Digital Signature Scheme
+ECDIS:: Electronic Chart Display Information System
+ECS:: Electronic Chart System
+ENC:: Electronic Navigational Chart
+GML:: Geography Markup Language
+IEC:: International Electrotechnical Commission
+IHO:: International Hydrographic Organization
+ISO:: International Organization for Standardization
+NS:: Navigation Surface
+ONS:: Open Navigation Surface
+PK:: Public Key
+SA:: Signature Authority
+SK:: Secret Key
+UML:: Universal Modelling Language
