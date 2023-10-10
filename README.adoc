@@ -1,17 +1,9 @@
-image::./sources/2.3.0/images/figure-s102-logo.svg[S102_logo__signalFlagsSpellingS102,248,120]
-
-= IHO S-102 Bathymetric Surface Product Specification
-
-image:https://github.com/metanorma/S-102-Product-Specification/actions/workflows/generate.yml/badge.svg["Build Status", link="https://github.com/metanorma/S-102-Product-Specification/actions/workflows/generate.yml"]
-
-This document is available in its rendered forms here:
-
-* https://iho-ohi.github.io/S-102-Product-Specification/[IHO S-102 (HTML)]
+= IHO C-13 Manual on Hydrography
 
 == Purpose
 
 This is the IHO repository for developing the next edition of
-the S-102 Bathymetric Surface Product Specification.
+the C-13 Manual on Hydrography.
 
 WARNING: The contents of this repository are in draft form and are not necessarily in force yet.
 Please refer to the final version published on the official
@@ -20,10 +12,9 @@ https://iho.int[IHO] website.
 
 == General
 
-This repository contains the source files of S-102 standards, including:
+This repository contains the source files of C-13 publications, including:
 
-* S-102 2.2.0
-* S-102 2.3.0 (in development)
+* C-13 0.0.1
 
 These documents are encoded in the
 https://www.metanorma.org/author/topics/document-format/[Metanorma AsciiDoc format].
@@ -32,7 +23,7 @@ https://www.metanorma.org/author/topics/document-format/[Metanorma AsciiDoc form
 == Structure
 
 `sources/`::
-source of the S-102 documents and models
+source of the C-13 documents
 
 `site/`::
 (automatically generated, in the `gh-pages` branch) published document.
