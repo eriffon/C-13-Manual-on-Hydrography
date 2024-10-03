@@ -1,3 +1,8 @@
 == Hydrographic Practice
 
 This chapter talks about hydrographic practice.
+
+Hydrographic practice consists in the following:
+- Conduct a survey
+- Process the data
+- Data validation
