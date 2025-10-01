@@ -4,10 +4,10 @@
 
 === Introduction
 
-* Uncertainty is used to support our understanding of the measurements. It's about managing uncertainties.
+* Uncertainty is used to support our understanding of the measurements (start with 3 examples). It's about managing uncertainties, because some aspects can be controlled.
 * The importance of an uncertainty budget (prediction) and estimating the uncertainty from the data (data-driven).
-* Contrary to land surveying techniques, the establishment of control points is mostly not feasible in hydrographic surveying. Hence, we cannot use the same metrics to evaluate accuracy of e.g. depth, current speed.
-* Accuracy should not be confused with uncertainty
+* Contrary to land surveying techniques, the establishment of control points is mostly not feasible in hydrographic surveying. Hence, we cannot use the same metrics to evaluate accuracy of e.g. depth, current speed. Principles are the same but evaluation tools are not the same. Often, the error budgets will be smaller on land versus sea because we can better control the measurement factors.
+* Accuracy should not be confused with uncertainty. Based on the (new) definition of S-32, Accuracy should be qualitative and be related to bias.
 * Introduce the fundamental difference between the uncertain approach and the error approach
 
 === Fundamentals of Error Theory
@@ -17,16 +17,17 @@
 * Describe our (hydrographic) understanding of the concepts of accuracy/bias and precision/variance (standard deviation)
 * Describe the RMSE as a metric to evaluate both error components (random and systematic) with reference data (i.e. control points)
 * Use the preceding explanation as a justification why we need the uncertainty approach in Hydrography and describe it.
-* Describe the relevant concepts and terms (adapted to Hydrography from VIM) in the uncertainty approach: uncertainty, 95% confidence level (aka. expanded uncertainty), ways to estimate uncertainty (type A and B evaluations), combining uncertainties.
+* Describe the relevant concepts and terms (adapted to Hydrography from VIM) in the uncertainty approach: uncertainty, normal (Gaussian) distribution of error, 95% confidence level (aka. "expanded uncertainty" but don't use this term), ways to estimate uncertainty ("type A and B evaluations" but don't use these terms), combining uncertainties.
 
 === Uncertainty Applied to Hydrographic Surveying
 
-* Hydrography has been a strong proponent of predicting uncertainties a priori by applying the law of uncertainty propagation on a functional (georeferencing) model. This is the predictive approach (see 3.1.1). A priori is to be understood in this context as before any observation/measurements are made.
+* Hydrography has been a strong proponent of predicting uncertainties a priori by applying the law of uncertainty propagation on a functional (georeferencing) model. This is the predictive approach (see 3.1.1). A priori is to be understood in this context as before any observation/measurements are made. Yet, it could also be applied afterwards with better sources uncertainty estimates.
 * A posteriori is likewise to be understood as after all observations/measurements have been made. The uncertainty is estimated from the data. This is the data-driven approach (see 3.1.2).
+* It's important to mention that "predictive" does not necessarily mean a priori + examples "Data driven" usually means a posteriori. OR should we substitute the hedader "predictive" with something else?
 
 ==== Estimating Depth Uncertainties
 
-* The predictive (3.1.1) and data-driven (3.1.2) approaches are fundamentally different in the sense that the predictive approach will estimate an uncertainty for each sounding measurement while the data-driven approach will estimate the uncertainty at a position/node from a statistical computation from multiple sounding measurements.
+* The predictive (3.1.1) and data-driven (3.1.2) approaches are fundamentally different in the sense that the predictive approach will estimate an uncertainty for each sounding measurement while the data-driven approach will estimate the uncertainty at a position/node from a statistical computation from multiple sounding measurements. (May bring more confusion. Perhaps move it up)
 * The predictive approach tends to overestimate the uncertainty while the data-driven approach tends to underestimate the uncertainty.
 
 ===== Predictive Approach
@@ -37,13 +38,28 @@
 
 ===== Data-driven Approach
 
-* Describe how to estimate uncertainty at a specific position/node. This can amount to either computing the standard error or (as proposed by Calder) to compute the variance of only the observations contributing to the depth estimate at that position/node. Commonly this is referred to as Product Uncertainty and is a useful attribute of a bathymetric grid.
-* Describe how crosslines are useful at estimating the uncertainty in the (measurement) sensor frame and are therefore a sensor performance indicator.
-* Describe how overlaps between independent survey systems may be used to estimate uncertainty (expressed as a mean square error).
+* Describe how to estimate uncertainty at a specific position/node. 
+* There is no standard parameter to calculation standard uncertainty. Examples can be:
+   - This can amount to either computing the standard error
+   - SDASN (standard deviation along the surface normal)
+   - (as proposed by Calder) to compute the variance of only the observations contributing to the depth estimate at that position/node.
+* Describe how crosslines are useful at estimating the uncertainty in the (measurement) sensor frame and are therefore a sensor performance indicator. Describe how overlaps between independent survey systems may be used to estimate uncertainty (expressed as a mean square error).
 
 ==== Practical Applications of Uncertainty
 
+===== Data Processing
+
 * Using TPU for grid generation (e.g. CUBE)
-* Using TPU as a filter
+* Using TPU as a filter in real-time or in post-processing
+* See Chapter 8
+
+====== Nautical Products
+
+* Uncertainty can be a contribution to CATZOC
+* Used as a quality indicator to disambiguate (criteria decision) between surveys for chart production
+* Uncertainty can be the input to the Uncertainty Layer of S-102
 
 ==== Future Trends in Uncertainty Management
+
+* New methods based on ML
+* Possible link to B-13
