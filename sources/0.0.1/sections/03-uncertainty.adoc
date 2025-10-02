@@ -8,11 +8,11 @@
 * The importance of an uncertainty budget (prediction) and estimating the uncertainty from the data (data-driven).
 * Contrary to land surveying techniques, the establishment of control points is mostly not feasible in hydrographic surveying. Hence, we cannot use the same metrics to evaluate accuracy of e.g. depth, current speed. Principles are the same but evaluation tools are not the same. Often, the error budgets will be smaller on land versus sea because we can better control the measurement factors.
 * Accuracy should not be confused with uncertainty. Based on the (new) definition of S-32, Accuracy should be qualitative and be related to bias.
-* Introduce the fundamental difference between the uncertain approach and the error approach
+* [Jean-Guy] Introduce the fundamental difference between the uncertain approach and the error approach
 
 === Fundamentals of Error Theory
 
-* All measurements are fundamentally wrong.
+* [Adail] All measurements are fundamentally wrong.
 * Describe the concept of an error and its different types (systematic and random). A blunder will not be considered as an error (as based on our definition of error)
 * Describe our (hydrographic) understanding of the concepts of accuracy/bias and precision/variance (standard deviation)
 * Describe the RMSE as a metric to evaluate both error components (random and systematic) with reference data (i.e. control points)
@@ -21,13 +21,13 @@
 
 === Uncertainty Applied to Hydrographic Surveying
 
-* Hydrography has been a strong proponent of predicting uncertainties a priori by applying the law of uncertainty propagation on a functional (georeferencing) model. This is the predictive approach (see 3.1.1). A priori is to be understood in this context as before any observation/measurements are made. Yet, it could also be applied afterwards with better sources uncertainty estimates.
+* [Joao Celso] Hydrography has been a strong proponent of predicting uncertainties a priori by applying the law of uncertainty propagation on a functional (georeferencing) model. This is the predictive approach (see 3.1.1). A priori is to be understood in this context as before any observation/measurements are made. Yet, it could also be applied afterwards with better sources uncertainty estimates.
 * A posteriori is likewise to be understood as after all observations/measurements have been made. The uncertainty is estimated from the data. This is the data-driven approach (see 3.1.2).
 * It's important to mention that "predictive" does not necessarily mean a priori + examples "Data driven" usually means a posteriori. OR should we substitute the hedader "predictive" with something else?
 
 ==== Estimating Depth Uncertainties
 
-* The predictive (3.1.1) and data-driven (3.1.2) approaches are fundamentally different in the sense that the predictive approach will estimate an uncertainty for each sounding measurement while the data-driven approach will estimate the uncertainty at a position/node from a statistical computation from multiple sounding measurements. (May bring more confusion. Perhaps move it up)
+* [Nicki] The predictive (3.1.1) and data-driven (3.1.2) approaches are fundamentally different in the sense that the predictive approach will estimate an uncertainty for each sounding measurement while the data-driven approach will estimate the uncertainty at a position/node from a statistical computation from multiple sounding measurements. (May bring more confusion. Perhaps move it up)
 * The predictive approach tends to overestimate the uncertainty while the data-driven approach tends to underestimate the uncertainty.
 
 ===== Predictive Approach
@@ -59,7 +59,7 @@
 * Used as a quality indicator to disambiguate (criteria decision) between surveys for chart production
 * Uncertainty can be the input to the Uncertainty Layer of S-102
 
-==== Future Trends in Uncertainty Management
+==== (Future Trends in Uncertainty Management)
 
 * New methods based on ML
 * Possible link to B-13
