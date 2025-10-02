@@ -32,7 +32,7 @@
 
 ===== Predictive Approach
 
-* Describe TPU and its two components: TVU and THU
+* [Raymon] Describe TPU and its two components: TVU and THU
 * Describe how TVU and THU can be calculated using a rigorous mathematical approach. Cite Hare et al. (1995) as an example.
 * Describe how TVU and THU can be calculated using a modelling approach. Give an example of using a Monte-Carlo simulation for ALB (Cblue).
 
