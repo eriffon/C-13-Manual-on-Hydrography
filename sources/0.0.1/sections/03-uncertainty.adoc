@@ -55,6 +55,16 @@ The data-driven approach estimates uncertainty after depth measurements have bee
 
 ===== Predictive Approach
 
+In hydrographic surveying, understanding and minimizing TPU, TVU, and THU are crucial. These components influence the reliability of the data and, consequently, the safety and efficiency of maritime operations.  
+
+Total Propagated Uncertainty (TPU) is a comprehensive measure used in hydrography to quantify the overall predicted uncertainty/error in three dimensions associated with the positioning and measurement of hydrographic data e.g. a sounding on the seafloor. It encompasses various sources of error that can influence the accuracy of hydrographic surveys, including sensor inaccuracies, expected environmental conditions, model inaccuracies and data processing methods. Instead of TPU, the term “error budget” is also used. TPU is particularly relevant in the context of survey preparation and execution were it can be used as a tool to asses if the specified requirements of a survey is expected to be met using a specific set-up that is intended to measure hydrographic data.
+
+#All measurements are considered to be uncorrelated random variables with normally distributed uncertainties, all uncertainty sources acting independently, so all covariance terms can be disregarded, and the TPU can be computed statistically using the well-known Law of Uncertainty Propagation.# 
+
+The two primary components of TPU are Total Vertical Uncertainty (TVU) and Total Horizontal Uncertainty (THU).  
+
+TVU refers to the cumulative vertical uncertainty/error in measurements, whereas THU refers to the horizontal cumulative uncertainty/error in measurements.  Uncertainties can be caused by factors such as uncertainties in vessel and instrument positioning, sound velocity variations, equipment calibration errors, vessel motion, tide corrections or uncertainty in the bending of light in the water when using techniques like ALB.  
+
 * Describe TPU and its two components: TVU and THU
 * Describe how TVU and THU can be calculated using a rigorous mathematical approach. Cite Hare et al. (1995) as an example.
 * Describe how TVU and THU can be calculated using a modelling approach. Give an example of using a Monte-Carlo simulation for ALB (Cblue).
