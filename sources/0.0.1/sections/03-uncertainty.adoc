@@ -36,9 +36,7 @@ The predictive and data-driven approaches are fundamentally different in the sen
 
 The predictive approach estimates the uncertain of depth measurements based on the knowledge of system uncertainties, sensor capabilities, and environmental factors. This approach provides per-sounding uncertainty, which is beneficial during acquisition and processing. Since the approach relies on accurate characterization of each source of uncertainty, it tends to conservatively overestimate the combined uncertainty. 
 
-The data-driven approach estimates uncertainty after depth measurements have been acquired, using statistical analysis of the measured depths. Instead of collecting each source of uncertainty, the approach relies on actual measurement dispersion to infer the reliability of depth estimates within areas or nodes. This approach directly reflects the variability of depth measurements and useful when producing bathymetric products. However, it tends to underestimate uncertainty, as it neglects systematic uncertainties which effects all depth measurements. In addition, the data-driven approach requires sufficient data density to produce valid statistical estimates of uncertainty. 
-
-* The predictive approach tends to overestimate the uncertainty while the data-driven approach tends to underestimate the uncertainty.
+The data-driven approach estimates uncertainty after depth measurements have been acquired, using statistical analysis of the measured depths. Instead of collecting each source of uncertainty, the approach relies on actual measurement dispersion to infer the reliability of depth estimates within areas or nodes. This approach directly reflects the variability of depth measurements and useful when producing bathymetric products. However, it tends to underestimate uncertainty, as it neglects systematic uncertainties which effects all depth measurements. In addition, the data-driven approach requires sufficient data density to produce valid statistical estimates of uncertainty.
 
 ===== Predictive Approach
 
