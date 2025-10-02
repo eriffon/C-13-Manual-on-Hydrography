@@ -24,9 +24,24 @@ The rest of this chapter is structured as follows. Section 2 will further descri
 
 === Uncertainty Applied to Hydrographic Surveying
 
-* [Joao Celso] Hydrography has been a strong proponent of predicting uncertainties a priori by applying the law of uncertainty propagation on a functional (georeferencing) model. This is the predictive approach (see 3.1.1). A priori is to be understood in this context as before any observation/measurements are made. Yet, it could also be applied afterwards with better sources uncertainty estimates.
-* A posteriori is likewise to be understood as after all observations/measurements have been made. The uncertainty is estimated from the data. This is the data-driven approach (see 3.1.2).
-* It's important to mention that "predictive" does not necessarily mean a priori + examples "Data driven" usually means a posteriori. OR should we substitute the hedader "predictive" with something else?
+Uncertainty is an inherent property of all measurements. For mariners, as navigation increasingly adopts explicit risk-management practices, quantified uncertainty becomes critical to decision-making—particularly where economic pressures on efficiency lead vessels to operate with reduced under-keel clearance and closer to charted depths. Consequently, surveyors are increasingly required to understand, manage, estimate, and report uncertainty.
+In hydrography, uncertainty is commonly classified by (i) when it is evaluated and (ii) how it is evaluated.
+
+1) Timing of evaluation
+
+*A priori uncertainty*. Estimated before data acquisition, typically from manufacturer specifications, laboratory calibration results, and modelling of known error sources. Because these estimates do not use survey data, they may not reflect the specific environmental and operational conditions of the survey area.
+	
+*A posteriori uncertainty*. Estimated from the acquired survey data, often by aggregating one or more parameters derived from the observations (e.g., line-to-line or surface differences). These estimates generally better represent the uncertainty actually achieved during the survey.
+
+2) Method of estimation
+
+*Model-based approach*. Makes use of mathematical models to derive uncertainty from known sources of variance. This approach can be applied a priori for planning and acceptance criteria and then refined a posteriori with data collected, survey-specific calibrations, etc.
+	
+*Empirical approach*. Estimates uncertainty directly from the dispersion of observations, such as repeat lines, crosslines, beam-to-beam or line-to-line differences, surface-difference statistics, or algorithmic estimators (e.g., gridding methods that output per-node uncertainty). This approach is inherently a posteriori because it requires the collected data.
+
+Practical considerations
+
+Model-based estimates often adopt conservative inputs to encompass all identified error sources and therefore may overestimate the true uncertainty. Empirical estimates can underestimate uncertainty if systematic effects or unobserved biases are not captured by the available data (e.g., uncompensated offsets, spatially correlated refraction errors, unmodelled timing biases). Best practice is to use both: employ a priori TPU for planning and initial compliance with standards, then confirm and—where appropriate—refine uncertainty a posteriori. Use empirical methods to validate final estimations (e.g., crossline analysis and surface consistency assessments). Final reporting should state the basis of the uncertainty estimate (model-based vs. data-driven, or hybrid), the coverage to which it applies, and any assumptions or limitations.
 
 ==== Estimating Depth Uncertainties
 
