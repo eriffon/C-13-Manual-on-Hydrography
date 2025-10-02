@@ -42,7 +42,14 @@ Bias (systematic) and variance (random) both load into TVU/THU.
 
 RMSE is used when comparing surveyed values to independent references because it captures both random scatter and any persistent offset in one metric:
 
-If a mean offset ____ is removed first, the residual RMSE approximates random uncertainty; if not, RMSE reflects both random and systematic components:
+[RMSE EQUATION HERE]
+
+If a mean offset stem:[\delta] is removed first, the residual RMSE approximates random uncertainty; if not, RMSE reflects both random and systematic components:
+
+[stem]
+++++
+RMSE^{2} \approx \sigma^{2} + \delta^{2}
+++++
 
 Good practice:
 * Ensure independence and comparable support (same vertical datum, similar spatial resolution, co-registration).
@@ -61,7 +68,12 @@ Single “accuracy” numbers cannot answer the operational question: How far fr
 ===== Key Concepts
 
 * *Uncertainty*: non-negative estimate characterizing the range within which the true value lies, given a confidence level.
+
 * *Assumed error distribution*: depth errors are commonly modeled as normal (Gaussian). Under this assumption:
+
+** 1D (depth): stem:[95% \approx 1.96 \times \sigma_{z}]
+** 2D (position): stem:[95% \approx 2.45 \times \max(\sigma_{x}, \sigma_{y})] if axis-aligned summaries are used (or compute from full covariance when available).
+
 * *Confidence level (95%)*: always state the level with the uncertainty value.
 
 ===== Estimating Uncertainty (two complementary practices)
@@ -82,7 +94,12 @@ Use analytical propagation (Jacobians) where linearization is adequate; use Mont
 
 ===== Combining Uncertainties
 
-For independent contributors u_1,…,u_k (as standard uncertainties, 1σ), combine in quadrature:
+For independent contributors stem:[\mu_{1}, ..., \mu_{k}] (as standard uncertainties, 1σ), combine in quadrature:
+
+[stem]
+++++
+EQUATION
+++++
 
 Then convert to the reporting confidence level (e.g., ×1.96 for 95% in 1D). For correlated terms, include covariances or use Monte Carlo.
 Implementation notes:
