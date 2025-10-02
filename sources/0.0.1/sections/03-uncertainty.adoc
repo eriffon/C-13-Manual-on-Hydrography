@@ -59,6 +59,8 @@ In hydrographic surveying, understanding and minimizing TPU, TVU, and THU are cr
 
 Total Propagated Uncertainty (TPU) is a comprehensive measure used in hydrography to quantify the overall predicted uncertainty/error in three dimensions associated with the positioning and measurement of hydrographic data e.g. a sounding on the seafloor. It encompasses various sources of error that can influence the accuracy of hydrographic surveys, including sensor inaccuracies, expected environmental conditions, model inaccuracies and data processing methods. Instead of TPU, the term “error budget” is also used. TPU is particularly relevant in the context of survey preparation and execution were it can be used as a tool to asses if the specified requirements of a survey is expected to be met using a specific set-up that is intended to measure hydrographic data.
 
+image::https://github.com/eriffon/C-13-Manual-on-Hydrography/blob/writing_chap3/sources/0.0.1/TVU.png[]
+
 #All measurements are considered to be uncorrelated random variables with normally distributed uncertainties, all uncertainty sources acting independently, so all covariance terms can be disregarded, and the TPU can be computed statistically using the well-known Law of Uncertainty Propagation.# 
 
 The two primary components of TPU are Total Vertical Uncertainty (TVU) and Total Horizontal Uncertainty (THU).  
