@@ -31,7 +31,79 @@ All measurements carry error; the “truth” is unknowable and only approached 
 
 *Accuracy / bias*: proximity of the measured quantity to a reference or true value. Estimated via comparisons to control (reference surfaces, crosslines, junctions, check lines, control points) and by tracking known bias contributors (vertical datum realization, sound speed, latency).
 
-* Precision / variance (standard deviation): repeatability under unchanged conditions. For depth, summarize precision as a standard deviation stem:[sqrt(4) = 2]
+*Precision / variance (standard deviation)*: repeatability under unchanged conditions. For depth, summarize precision as a standard deviation, stem:[\sigma_{z}]; for position as stem:[\sigma_{x}, \sigma_{y}] (often summarized radially as stem[\sigma_{p}]).
+
+Hydrographic standards express Total Propagated Uncertainty (TPU) with:
+**TVU (Total Vertical Uncertainty)* for depth, at a stated confidence level.
+**THU (Total Horizontal Uncertainty)* for position, likewise at a stated confidence.
+Bias (systematic) and variance (random) both load into TVU/THU.
+
+==== Root Mean Square Error (RMSE)
+
+RMSE is used when comparing surveyed values to independent references because it captures both random scatter and any persistent offset in one metric:
+
+If a mean offset ____ is removed first, the residual RMSE approximates random uncertainty; if not, RMSE reflects both random and systematic components:
+
+Good practice:
+* Ensure independence and comparable support (same vertical datum, similar spatial resolution, co-registration).
+* State whether a bias term was removed and report the bias separately.
+
+==== Why Hydrography Uses an Uncertainty Approach
+
+Single “accuracy” numbers cannot answer the operational question: How far from truth might this depth/position be? Survey systems blend many contributors (GNSS/INS, timing, sound speed, beam geometry, refraction, tides/vertical separation, gridding/generalization). Some vary in time/space; others are persistent. An uncertainty framework:
+* makes contributors explicit,
+* combines them into TVU/THU at a stated confidence level,
+* supports survey design (a-priori predictions) and Quality Analysis (a-posteriori checks),
+* and communicates fitness for use to end-users (e.g., CATZOC/QoBD, S-102 uncertainty layers).
+
+==== Uncertainty Framework in Hydrography
+
+===== Key Concepts
+
+* *Uncertainty*: non-negative estimate characterizing the range within which the true value lies, given a confidence level.
+* *Assumed error distribution*: depth errors are commonly modeled as normal (Gaussian). Under this assumption:
+* *Confidence level (95%)*: always state the level with the uncertainty value.
+
+===== Estimating Uncertainty (two complementary practices)
+
+. From data variability (repeats and internal consistency):
+
+* Within-track repeat pings (after outlier control).
+* Crosslines and line-to-line differences (junction analysis; remove trends before statistics).
+* Surface differences against an independent reference (check survey, reference area).
+* #Note: common-mode effects (e.g., datum shift, sound-speed bias) cancel and will not appear—so this is typically a lower bound unless bias is separately estimated.#
+
+. From models, calibration, and specifications (propagation):
+
+Build a contributor budget and propagate through the geolocation/measurement model: sensor specs (range noise, beam angle), timing/latency, GNSS/INS covariance, lever arms/boresight, heave, sound-speed profile uncertainty and ray-path modeling, tide/vertical separation model uncertainty, refraction, and gridding/generalization.
+Use analytical propagation (Jacobians) where linearization is adequate; use Monte Carlo where nonlinearity is strong (e.g., refraction, bathymetric inversion).
+
+*Best practice*: predict a-priori to design and monitor; verify a-posteriori against repeats, crosslines, and reference areas; estimate and report any residual bias.
+
+===== Combining Uncertainties
+
+For independent contributors u_1,…,u_k (as standard uncertainties, 1σ), combine in quadrature:
+
+Then convert to the reporting confidence level (e.g., ×1.96 for 95% in 1D). For correlated terms, include covariances or use Monte Carlo.
+Implementation notes:
+* TVU: combine vertical contributors (include residual bias if uncorrected).
+* THU: combine horizontal contributors (GNSS/INS, timing, lever arms/boresight, beam steering, etc.).
+* Surfaces vs soundings: if delivering a gridded surface, report the uncertainty of the cell estimate (not of a single ping); account for spatial averaging and resolution.
+
+===== Hydrographic Examples
+
+* MBES surface with variable sound speed: THU often dominated by GNSS/INS; TVU mixes range noise, beam-angle effects (growing off-nadir), and refraction from SSP uncertainty. Mitigate via frequent SVP/CTD, real-time ray tracing, strong crossline regime; include vertical datum realization terms.
+* Topo-bathy LIDAR: TVU comprises subaerial (platform/trajectory/geolocation) and subaqueous components (surface refraction, optical properties). The subaqueous part is nonlinear; Monte Carlo is preferred; asymmetric error bounds can appear. Include vertical datum transfer uncertainty.
+* SDB (empirical/ML/RTE): Depth is derived. External uncertainty estimation via high-quality MBES reference and held-out validation; full propagation (sensor radiometry, water-leaving radiance model, IOPs, adjacency, water level) for predictive bounds. Site transferability is limited; re-validation is required.
+
+===== Summary
+
+* Every hydrographic depth/position value should be accompanied by an uncertainty at a stated confidence level. TVU/THU encapsulate both random scatter and residual bias.
+* RMSE is useful for external checks; disclose and separately report any bias removed.
+* Plan (a-priori), monitor, and verify (a-posteriori); document contributors and assumptions.
+* Preserve/propagate uncertainty in deliverables (e.g., BAG node uncertainties, S-102 metadata); ensure cartographic generalization does not imply better quality than the source.
+* Quality indicators for end-users should reflect the processed outcome, not just instrument capability.
+
 
 === Uncertainty Applied to Hydrographic Surveying
 
@@ -74,9 +146,11 @@ image::https://github.com/eriffon/C-13-Manual-on-Hydrography/blob/writing_chap3/
 
 #All measurements are considered to be uncorrelated random variables with normally distributed uncertainties, all uncertainty sources acting independently, so all covariance terms can be disregarded, and the TPU can be computed statistically using the well-known Law of Uncertainty Propagation.# 
 
-The two primary components of TPU are Total Vertical Uncertainty (TVU) and Total Horizontal Uncertainty (THU).  
+The two primary components of TPU are Total Vertical Uncertainty (TVU) and Total Horizontal Uncertainty (THU). 
 
-TVU refers to the cumulative vertical uncertainty/error in measurements, whereas THU refers to the horizontal cumulative uncertainty/error in measurements.  Uncertainties can be caused by factors such as uncertainties in vessel and instrument positioning, sound velocity variations, equipment calibration errors, vessel motion, tide corrections or uncertainty in the bending of light in the water when using techniques like ALB.  
+THU is the component of total propagated uncertainty (TPU) calculated in the horizontal dimension. THU is a two-dimensional quantity with all contributing horizontal measurement uncertainties included, whereas TVU is the component of total propagated uncertainty (TPU) calculated in the vertical dimension. TVU is a one-dimensional quantity with all contributing vertical measurement uncertainties included.  
+
+Uncertainties can be caused by factors such as uncertainties in vessel and instrument positioning, sound velocity variations, equipment calibration errors, vessel motion, tide corrections or uncertainty in the bending of light in the water when using techniques like ALB.  
 
 * Describe TPU and its two components: TVU and THU
 * Describe how TVU and THU can be calculated using a rigorous mathematical approach. Cite Hare et al. (1995) as an example.
