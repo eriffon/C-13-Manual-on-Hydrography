@@ -199,7 +199,17 @@ Uncertainties can be caused by factors such as uncertainties in vessel and instr
 * Used as a quality indicator to disambiguate (criteria decision) between surveys for chart production
 * Uncertainty can be the input to the Uncertainty Layer of S-102
 
-==== (Future Trends in Uncertainty Management)
+==== Future Trends in Uncertainty Management
 
-* New methods based on ML
-* Possible link to B-13
+This section highlights where hydrographic uncertainty practice is heading—especially for gridded products (e.g., S-102) and derived depths (e.g., SDB)—focusing on three ML-adjacent ideas that strengthen how we express risk without changing field procedures.
+Quantile Prediction (predicting uncertainty directly)
+What it is. Models that learn conditional quantiles (e.g., 5th/50th/95th percentiles of depth given features), providing native prediction intervals rather than inferring them post-hoc from variance.
+Why it matters. Hydrographic errors are typically heteroskedastic (grow with depth). Quantile models flex to that, returning wider intervals where the seafloor or water column are challenging.
+
+Locally Adaptive Prediction (uncertainty that follows the neighborhood)
+What it is. Methods that adapt model complexity and interval width to local feature space or geography (e.g., nearest-neighbor quantile smoothing, local bandwidth selection, geographically weighted learners).
+Why it matters. Error structure changes across a block—over sand waves vs. rock outcrops; in clear vs. turbid patches. Local adaptivity yields tighter intervals in stable areas and wider bands where conditions shift.
+
+Conformal Prediction (valid coverage, distribution-free)
+What it is. A calibration wrapper around any model that produces prediction sets or intervals with formal coverage guarantees (e.g., 95%) under minimal assumptions, using a held-out calibration set.
+Why it matters. Even well-tuned models can be mis-calibrated. Conformal methods re-scale residuals so that stated 95% intervals empirically contain the truth ~95% of the time—crucial for safety decisions.
