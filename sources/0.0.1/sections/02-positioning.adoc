@@ -1,4 +1,4 @@
-
+:stem:
 == Principles of Hydrographic Surveying
-
+stem:[sqrt(4) = 2]
 This chapter talks about sounding equipments.
