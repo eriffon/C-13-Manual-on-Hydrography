@@ -51,13 +51,16 @@ If a mean offset stem:[\delta] is removed first, the residual RMSE approximates 
 RMSE^{2} \approx \sigma^{2} + \delta^{2}
 ++++
 
+
 Good practice:
+
 * Ensure independence and comparable support (same vertical datum, similar spatial resolution, co-registration).
 * State whether a bias term was removed and report the bias separately.
 
 ==== Why Hydrography Uses an Uncertainty Approach
 
 Single “accuracy” numbers cannot answer the operational question: How far from truth might this depth/position be? Survey systems blend many contributors (GNSS/INS, timing, sound speed, beam geometry, refraction, tides/vertical separation, gridding/generalization). Some vary in time/space; others are persistent. An uncertainty framework:
+
 * makes contributors explicit,
 * combines them into TVU/THU at a stated confidence level,
 * supports survey design (a-priori predictions) and Quality Analysis (a-posteriori checks),
