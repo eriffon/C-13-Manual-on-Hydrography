@@ -15,12 +15,23 @@ The rest of this chapter is structured as follows. Section 2 will further descri
 
 === Fundamentals of Error Theory
 
-* [Adail] All measurements are fundamentally wrong.
-* Describe the concept of an error and its different types (systematic and random). A blunder will not be considered as an error (as based on our definition of error)
-* Describe our (hydrographic) understanding of the concepts of accuracy/bias and precision/variance (standard deviation)
-* Describe the RMSE as a metric to evaluate both error components (random and systematic) with reference data (i.e. control points)
-* Use the preceding explanation as a justification why we need the uncertainty approach in Hydrography and describe it.
-* Describe the relevant concepts and terms (adapted to Hydrography from VIM) in the uncertainty approach: uncertainty, normal (Gaussian) distribution of error, 95% confidence level (aka. "expanded uncertainty" but don't use this term), ways to estimate uncertainty ("type A and B evaluations" but don't use these terms), combining uncertainties.
+All measurements carry error; the “truth” is unknowable and only approached probabilistically. In hydrography this matters directly to safety of navigation and downstream products (ENCs, S-102 surfaces, contours, shoal-biased selections). Rather than treating a single accuracy number as definitive, modern survey practice expresses how far a measured value may be from the true value with a stated confidence level. This section sets error-theory foundations and then frames how we quantify and combine uncertainties for hydrographic use.
+
+==== Concept of Error
+
+*Error* is the difference between a measured value and the (unknown) true value. Two behaviors are distinguished:
+
+* *Systematic error (bias)*: repeatable offset or trend (e.g., sound-speed model bias, tide/ellipsoid separation bias, GNSS antenna height mis-modeling). Predictable once detected; ideally corrected. Residual bias contributes to total error.
+* *Random error (noise)*: zero-mean scatter from unmodeled variability (e.g., beam steering jitter, heave filtering residuals, electronic/photon noise, short-scale water-level variability). Averages down with repetition.
+
+*Blunders* (gross mistakes, e.g., wrong lever-arm sign, wrong epoch) are not treated as “error”; they are data-quality failures to detect and remove via Quality Check.
+
+==== Accuracy and Precision in Hydrography
+:stem: latexmath
+
+*Accuracy / bias*: proximity of the measured quantity to a reference or true value. Estimated via comparisons to control (reference surfaces, crosslines, junctions, check lines, control points) and by tracking known bias contributors (vertical datum realization, sound speed, latency).
+
+* Precision / variance (standard deviation): repeatability under unchanged conditions. For depth, summarize precision as a standard deviation stem:[sqrt(4) = 2]
 
 === Uncertainty Applied to Hydrographic Surveying
 
