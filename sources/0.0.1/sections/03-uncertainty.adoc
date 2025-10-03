@@ -27,28 +27,33 @@ All measurements carry error; the “truth” is unknowable and only approached 
 *Blunders* (gross mistakes, e.g., wrong lever-arm sign, wrong epoch) are not treated as “error”; they are data-quality failures to detect and remove via Quality Check.
 
 ==== Accuracy and Precision in Hydrography
-:stem: latexmath
+:stem:
 
 *Accuracy / bias*: proximity of the measured quantity to a reference or true value. Estimated via comparisons to control (reference surfaces, crosslines, junctions, check lines, control points) and by tracking known bias contributors (vertical datum realization, sound speed, latency).
 
-*Precision / variance (standard deviation)*: repeatability under unchanged conditions. For depth, summarize precision as a standard deviation, stem:[\sigma_{z}]; for position as stem:[\sigma_{x}, \sigma_{y}] (often summarized radially as stem[\sigma_{p}]).
+*Precision / variance (standard deviation)*: repeatability under unchanged conditions. For depth, summarize precision as a standard deviation, stem:[\sigma_{z}]; for position as stem:[\sigma_{x}, \sigma_{y}] (often summarized radially as stem:[\sigma_{p}]).
 
 Hydrographic standards express Total Propagated Uncertainty (TPU) with:
-**TVU (Total Vertical Uncertainty)* for depth, at a stated confidence level.
-**THU (Total Horizontal Uncertainty)* for position, likewise at a stated confidence.
+
+* TVU (Total Vertical Uncertainty) for depth, at a stated confidence level.
+
+* THU (Total Horizontal Uncertainty) for position, likewise at a stated confidence.
 Bias (systematic) and variance (random) both load into TVU/THU.
 
 ==== Root Mean Square Error (RMSE)
 
 RMSE is used when comparing surveyed values to independent references because it captures both random scatter and any persistent offset in one metric:
 
-[RMSE EQUATION HERE]
+[stem]
+++++
+RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (z_{i}^{survey} - z_{i}^{ref})}
+++++
 
-If a mean offset stem:[\delta] is removed first, the residual RMSE approximates random uncertainty; if not, RMSE reflects both random and systematic components:
+If a mean offset stem:[\overline{\Delta}] is removed first, the residual RMSE approximates random uncertainty; if not, RMSE reflects both random and systematic components:
 
 [stem]
 ++++
-RMSE^{2} \approx \sigma^{2} + \delta^{2}
+RMSE^{2} \approx \sigma^{2} + \overline{Delta}^{2}
 ++++
 
 
@@ -101,13 +106,17 @@ For independent contributors stem:[\mu_{1}, ..., \mu_{k}] (as standard uncertain
 
 [stem]
 ++++
-EQUATION
+\mu_{combined} = \sqrt{\sum_{j=1}^{k} \mu_{j}^{2}}
 ++++
 
-Then convert to the reporting confidence level (e.g., ×1.96 for 95% in 1D). For correlated terms, include covariances or use Monte Carlo.
+Then convert to the reporting confidence level (e.g., stem:[\times 1.96] for 95% in 1D). For correlated terms, include covariances or use Monte Carlo.
+
 Implementation notes:
+
 * TVU: combine vertical contributors (include residual bias if uncorrected).
+
 * THU: combine horizontal contributors (GNSS/INS, timing, lever arms/boresight, beam steering, etc.).
+
 * Surfaces vs soundings: if delivering a gridded surface, report the uncertainty of the cell estimate (not of a single ping); account for spatial averaging and resolution.
 
 ===== Hydrographic Examples
@@ -178,7 +187,7 @@ The calculation of THU and TVU is based on the principles outlined by Hare et al
 
 [stem]
 ++++
-U_{total} = \sqrt_{U_{1}^{2} + U_{2}^{2} + ... + U_{n}^{2}}
+U_{total} = \sqrt{U_{1}^{2} + U_{2}^{2} + ... + U_{n}^{2}}
 ++++
 
 In this formula, stem:[U_{1}^{2}, U_{2}^{2}, U_{n}^{2}] represent different sources of uncertainty, such as measurement errors, instrument inaccuracies, and environmental influences. This approach assumes that the errors are independent and normally distributed, which is a common assumption in error analysis.
@@ -189,7 +198,7 @@ For horizontal uncertainty, the individual uncertainties in the x- and y-directi
 
 [stem]
 ++++
-THU = \sqrt_{U_{x}^{2} + U_{y}^{2}}
+THU = \sqrt{U_{x}^{2} + U_{y}^{2}}
 ++++
 
 This formula indicates that the total horizontal uncertainty is derived from the combined effect of errors in both directions, providing a single measure of horizontal positional accuracy. 
