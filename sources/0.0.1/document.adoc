@@ -18,23 +18,23 @@
 
 include::sections/00-document-history.adoc[]
 
-include::sections/01-overview.adoc[]
+include::sections/01-geodesy.adoc[]
 
-include::sections/02-principles.adoc[]
+include::sections/02-positioning.adoc[]
 
-include::sections/03-positioning.adoc[]
+include::sections/03-uncertainty.adoc[]
 
-include::sections/04-depth_determination.adoc[]
+include::sections/04-tides.adoc[]
 
-include::sections/05-feature_detection.adoc[]
+include::sections/05-depth.adoc[]
 
-include::sections/06-seafloor_characterisation.adoc[]
+include::sections/06-seafloor.adoc[]
 
-include::sections/07-water_levels_and_flows.adoc[]
+include::sections/07-feature.adoc[]
 
-include::sections/08-topographic_surveying.adoc[]
+include::sections/08-practice.adoc[]
 
-include::sections/09-hydrographic_practice.adoc[]
+include::sections/09-topography.adoc[]
 
 include::sections/10-appendices.adoc[]
 
